@@ -1,7 +1,5 @@
 public class example2 {
-    static double distance(Point2d a, Point2d b) {
-        return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
-    }
+
     public static void main(String[] args) {
         // Point2d a = new Point2d();// определяем экземпляр класса
         // a.x = 0; //а будет размещаться в стеке, остальное в куче
@@ -15,6 +13,10 @@ public class example2 {
 
         System.out.println(b.getInfo());
         System.out.println(a.toString());
-        System.out.println(distance(a, b));
+        a.setX(32);//задаем новое значение через метод
+        System.out.println(a.getX());
+        System.out.println(b.getY());
+        var dis = Point2d.distance(a, b);//если static то обращение через имя тип Point2d, не через конкретные экз (a,b)
+        System.out.println(dis);
     }
 }
